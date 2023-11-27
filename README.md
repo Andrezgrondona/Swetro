@@ -36,7 +36,7 @@ http://localhost:3000/usuarios-sospechosos
 
 ![Deploy](https://i.ibb.co/ZMXVGsr/Captura-de-pantalla-2023-11-27-091347.png)
 
-![Deploy](https://i.ibb.co/ZMXVGsr/Captura-de-pantalla-2023-11-27-091347.png)
+![Deploy][(https://i.ibb.co/ZMXVGsr/Captura-de-pantalla-2023-11-27-091347.png](https://i.ibb.co/k08chtp/Captura-de-pantalla-2023-11-27-091331.png)https://i.ibb.co/k08chtp/Captura-de-pantalla-2023-11-27-091331.png)
 
 
 
