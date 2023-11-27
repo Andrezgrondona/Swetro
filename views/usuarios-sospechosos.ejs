@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios Sospechosos</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100">
+
+  <div class="container mx-auto p-4">
+
+    <h1 class="text-3xl font-bold mb-4 text-center">Resultados de Fraude </h1>
+
+    <p class="text-xl mb-4 text-center">Total de usuarios sospechosos: <span class="text-red-500 font-bold "><%= totalSospechosos %></span></p>
+
+    <ul class="list-disc pl-4">
+      <% usuariosSospechosos.forEach((usuario, index) => { %>
+        <li class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <!-- <span class="text-lg font-semibold">Usuario ID:</span> <%= usuario.UserId %>, -->
+              <span class="text-lg font-semibold ml-2">Usuario ID:</span> <%= usuario.Id %>
+            </div>
+
+            <!-- Iconos de advertencia  de fraude -->
+            <div class="text-red-500">
+              <% if (usuario.DurationInSeconds < SOSPECHOSO_SEGUNDOS) { %>
+                <span title="Tiempo muy rápido" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.DistanceInMeters > SOSPECHOSO_METROS) { %>
+                <span title="Distancia alta" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.Steps > SOSPECHOSO_PASOS) { %>
+                <span title="Demasiados pasos" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.AverageSpeedInMetersPerSecond > SOSPECHOSO_V_MEDIA) { %>
+                <span title="Velocidad muy alta" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.AveragePaceInMinutesPerKilometer > SOSPECHOSO_RITMO) { %>
+                <span title="Ritmo muy alto" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.TotalElevationGainInMeters > SOSPECHOSO_ELEV_METROS) { %>
+                <span title="Elevación muy alta" class="mr-2">&#9888;</span>
+              <% } %>
+
+              <% if (usuario.AverageHeartRateInBeatsPerMinute > SOSPECHOSO_R_CARDIACO) { %>
+                <span title="Ritmo cardiaco muy alto" class="mr-2">&#9888;</span>
+              <% } %>
+            </div>
+          </div>
+
+          <!-- Línea de separación -->
+          <% if (index < usuariosSospechosos.length - 1) { %>
+            <hr class="my-4 border-t-2 border-gray-300">
+          <% } %>
+
+          <!-- Mensajes de fraude renderizados por color -->
+          <div class="text-gray-600">
+            <% if (usuario.DurationInSeconds < SOSPECHOSO_SEGUNDOS) { %>
+              <p class="mb-1 text-green-400">¡Precaución! Este usuario tiene un tiempo muy rápido.</p>
+            <% } %>
+
+            <% if (usuario.DistanceInMeters > SOSPECHOSO_METROS) { %>
+              <p class="mb-1 text-blue-500">¡Advertencia! Distancia recorrida por encima del límite.</p>
+            <% } %>
+
+            <% if (usuario.Steps > SOSPECHOSO_PASOS) { %>
+              <p class="mb-1 text-red-500">¡Riesgo! Número de pasos  alto.</p>
+            <% } %>
+
+            <% if (usuario.AverageSpeedInMetersPerSecond > SOSPECHOSO_V_MEDIA) { %>
+              <p class="mb-1 text-orange-500">¡Precaución! Velocidad muy alta .</p>
+            <% } %>
+
+            <% if (usuario.AveragePaceInMinutesPerKilometer > SOSPECHOSO_RITMO) { %>
+              <p class="mb-1 text-blue-500">¡Advertencia! Ritmo muy alto durante la actividad.</p>
+            <% } %>
+
+            <% if (usuario.TotalElevationGainInMeters > SOSPECHOSO_ELEV_METROS) { %>
+              <p class="mb-1 text-red-500">¡Riesgo! Elevación muy alta.</p>
+            <% } %>
+
+            <% if (usuario.AverageHeartRateInBeatsPerMinute > SOSPECHOSO_R_CARDIACO) { %>
+              <p class="mb-1 text-red-500">¡Riesgo! Ritmo cardiaco muy alto.</p>
+            <% } %>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+  </div>
+
+</body>
+</html>
