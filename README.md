@@ -11,7 +11,7 @@ Este proyecto  para detectar actividades sospechosas basado en datos proveniente
         Descripción: Un marco de diseño utilitario de bajo nivel que permite construir interfaces de usuario altamente personalizables con clases predefinidas.
         Uso en el Proyecto: Tailwind CSS se utiliza para estilizar la página web de resultados de detección de fraude, proporcionando un diseño agradable y elegante.
 
-    EJS (Embedded JavaScript):
+    EJS (Motor de plantillas):
         Descripción: Un motor de plantillas simple que permite incorporar lógica JavaScript directamente en las plantillas HTML.
         Uso en el Proyecto: EJS se emplea para renderizar dinámicamente la página web de resultados, permitiendo la inclusión de datos y lógica en el lado del servidor.
 
