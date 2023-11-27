@@ -29,10 +29,14 @@ http://localhost:3000/usuarios-sospechosos
 
 
 
+## Imagenes Deploy
 
-## Imagenes deploy
+![Deploy](https://i.ibb.co/TB4K2xh/Captura-de-pantalla-2023-11-27-091406.png)
 
-![Vista desde el navegador](https://ibb.co/Kj2Nhpy)
+
+![Deploy](https://i.ibb.co/ZMXVGsr/Captura-de-pantalla-2023-11-27-091347.png)
+
+![Deploy](https://i.ibb.co/ZMXVGsr/Captura-de-pantalla-2023-11-27-091347.png)
 
 
 
